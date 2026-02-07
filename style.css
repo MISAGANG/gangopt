@@ -1,113 +1,129 @@
-:root {
-    --primary: #00ff41; /* Verde Hacker */
-    --bg: #0a0a0a;
-    --card-bg: #151515;
+/* Configuración General */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
 body {
-    background-color: var(--bg);
+    background-color: #0a0a0a;
     color: white;
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
-}
-
-/* Fondo con efecto de bosque oscuro */
-.overlay {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
-                url('https://images.alphacoders.com/518/518933.jpg'); /* Imagen de The Forest */
-    background-size: cover;
-    z-index: -1;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 2rem 10%;
-    align-items: center;
-}
-
-.logo {
-    font-family: 'Permanent Marker', cursive;
-    font-size: 2rem;
-    color: var(--primary);
-}
-
-.logo span { color: white; }
-
-nav ul { display: flex; list-style: none; }
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    margin-left: 2rem;
-    font-weight: 900;
-    transition: 0.3s;
-}
-
-nav ul li a:hover, .active { color: var(--primary); }
-
-.hero {
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     text-align: center;
 }
 
-/* Efecto Glitch para GANG */
-.glitch {
-    font-size: 8rem;
-    font-family: 'Permanent Marker', cursive;
-    position: relative;
-    color: white;
+/* Fondo con efecto de profundidad */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0,255,204,0.05) 0%, rgba(0,0,0,1) 80%);
+    z-index: -1;
 }
 
-.btn-main {
-    margin-top: 2rem;
-    padding: 1rem 3rem;
-    background: transparent;
-    border: 2px solid var(--primary);
-    color: var(--primary);
-    text-decoration: none;
-    font-weight: 900;
-    transition: 0.4s;
+header {
+    padding: 50px 20px;
 }
 
-.btn-main:hover {
-    background: var(--primary);
-    color: black;
-    box-shadow: 0 0 20px var(--primary);
+h1 {
+    font-family: 'Nosifer', cursive;
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow: 0 0 10px #00ffcc;
 }
 
-.content { padding: 5rem 10%; }
-
-.card {
-    background: var(--card-bg);
-    display: flex;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 1px solid #333;
-    max-width: 800px;
-    margin: 2rem auto;
+.accent {
+    color: #00ffcc;
 }
 
-.card-img {
-    width: 40%;
-    background: url('https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/242760/header.jpg');
-    background-size: cover;
+.subtitle {
+    letter-spacing: 5px;
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
 
-.card-info { padding: 2rem; width: 60%; }
-
-.btn-download {
-    background: var(--primary);
+/* Botón GANG */
+.gang-button {
+    background: #00ffcc;
+    color: #000;
+    padding: 20px 40px;
+    font-size: 1.5rem;
+    font-weight: bold;
     border: none;
-    padding: 0.8rem 2rem;
-    margin-top: 1rem;
-    font-weight: 900;
     cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 255, 204, 0.5);
+    transition: 0.4s;
+    margin-top: 30px;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+
+.gang-button:hover {
+    transform: scale(1.1) skew(-5deg);
+    box-shadow: 0 0 40px rgba(0, 255, 204, 0.8);
+}
+
+/* Cuadro de Información */
+.info-box {
+    background: rgba(15, 15, 15, 0.95);
+    border: 2px solid #00ffcc;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 600px;
+    border-radius: 5px;
+    text-align: left;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.warning {
+    color: #ffcc00;
+    background: rgba(255, 204, 0, 0.1);
+    padding: 10px;
+    border-left: 4px solid #ffcc00;
+    margin-bottom: 20px;
+}
+
+.specs h4, .links-container h4 {
+    margin-bottom: 10px;
+    color: #00ffcc;
+}
+
+.specs ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.specs li::before {
+    content: "⚡ ";
+}
+
+/* Link Mediafire */
+.link-mediafire {
+    display: block;
+    background: #0070f3;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.link-mediafire:hover {
+    background: #0056b3;
+    box-shadow: 0 0 15px #0070f3;
+}
+
+footer {
+    padding: 40px;
+    font-size: 0.8rem;
+    opacity: 0.5;
 }
