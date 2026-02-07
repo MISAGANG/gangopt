@@ -1,16 +1,24 @@
-document.getElementById('btn-descargar').addEventListener('click', function() {
-    const infoBox = document.getElementById('info-descarga');
-    
-    if (infoBox.style.display === 'none') {
-        infoBox.style.display = 'block';
-        this.innerText = 'CERRAR INFO';
-        // Desplazar la vista hacia abajo automáticamente
-        infoBox.scrollIntoView({ behavior: 'smooth' });
-    } else {
-        infoBox.style.display = 'none';
-        this.innerText = 'DESCARGAR AHORA';
-    }
-});
+function openModal() {
+    const modal = document.getElementById('download-modal');
+    modal.style.display = 'block';
+    modal.style.opacity = "0";
+    setTimeout(() => {
+        modal.style.transition = "opacity 0.3s ease";
+        modal.style.opacity = "1";
+    }, 10);
+}
 
-// Efecto simple de consola al cargar
-console.log("THE FOREST V. GANG cargado. By MISAGANG04");
+function closeModal() {
+    const modal = document.getElementById('download-modal');
+    modal.style.opacity = "0";
+    setTimeout(() => {
+        modal.style.display = 'none';
+    }, 300);
+}
+
+window.onclick = function(event) {
+    var modal = document.getElementById('download-modal');
+    if (event.target == modal) {
+        closeModal();
+    }
+}
