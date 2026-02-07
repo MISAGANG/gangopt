@@ -1,0 +1,113 @@
+:root {
+    --primary: #00ff41; /* Verde Hacker */
+    --bg: #0a0a0a;
+    --card-bg: #151515;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg);
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Fondo con efecto de bosque oscuro */
+.overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), 
+                url('https://images.alphacoders.com/518/518933.jpg'); /* Imagen de The Forest */
+    background-size: cover;
+    z-index: -1;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 10%;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+.logo span { color: white; }
+
+nav ul { display: flex; list-style: none; }
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 900;
+    transition: 0.3s;
+}
+
+nav ul li a:hover, .active { color: var(--primary); }
+
+.hero {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Efecto Glitch para GANG */
+.glitch {
+    font-size: 8rem;
+    font-family: 'Permanent Marker', cursive;
+    position: relative;
+    color: white;
+}
+
+.btn-main {
+    margin-top: 2rem;
+    padding: 1rem 3rem;
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 900;
+    transition: 0.4s;
+}
+
+.btn-main:hover {
+    background: var(--primary);
+    color: black;
+    box-shadow: 0 0 20px var(--primary);
+}
+
+.content { padding: 5rem 10%; }
+
+.card {
+    background: var(--card-bg);
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #333;
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.card-img {
+    width: 40%;
+    background: url('https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/242760/header.jpg');
+    background-size: cover;
+}
+
+.card-info { padding: 2rem; width: 60%; }
+
+.btn-download {
+    background: var(--primary);
+    border: none;
+    padding: 0.8rem 2rem;
+    margin-top: 1rem;
+    font-weight: 900;
+    cursor: pointer;
+}
